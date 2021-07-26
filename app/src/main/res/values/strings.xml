@@ -1,0 +1,8 @@
+<resources>
+    <string name="username">Login</string>
+    <string name="password">Senha</string>
+    <string name="username_description">Insira o seu nome</string>
+    <string name="pass_description">Insira a sua senha</string>
+    <string name="login">Entrar</string>
+    <string name="app_name">Cuidador de Criança</string>
+</resources>
