@@ -5,4 +5,8 @@
     <string name="pass_description">Insira a sua senha</string>
     <string name="login">Entrar</string>
     <string name="app_name">Cuidador de Criança</string>
+    <string name="create_account">Criar Conta</string>
+    <string name="create_account_text">Criar conta</string>
+    <string name="new_username">Insira o nome do seu usuário</string>
+    <string name="new_password">Insira uma nova senha</string>
 </resources>

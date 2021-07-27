@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".main.MainActivity">
+    tools:context=".CreateAccount">
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/newUsername"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:hint="@string/username"
@@ -19,11 +19,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username_description"
+        android:text="@string/new_username"
         android:layout_gravity="center"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/newPassword"
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:hint="@string/password"
@@ -35,25 +35,16 @@
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="@string/pass_description"/>
+        android:text="@string/new_password"/>
 
     <Button
         android:layout_marginTop="38dp"
-        android:id="@+id/loginBtn"
+        android:id="@+id/createAccountBtn"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_gravity="center"
         android:background="@color/colorPrimary"
-        android:text="@string/login"
+        android:text="@string/create_account_text"
         android:textSize="14sp" />
-
-    <TextView
-        android:id="@+id/createAccountLink"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="@string/create_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>
