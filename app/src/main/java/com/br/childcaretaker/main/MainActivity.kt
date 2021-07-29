@@ -11,7 +11,7 @@ import com.br.childcaretaker.auth.Authentication
 
 class MainActivity:  AppCompatActivity(), View.OnClickListener {
 
-    private val auth: Authentication = Authentication()
+    private lateinit var auth: Authentication
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,21 +25,18 @@ class MainActivity:  AppCompatActivity(), View.OnClickListener {
             username=toStringElement(findViewById(R.id.username)),
             password=toStringElement(findViewById(R.id.password)),
         )
-        if (view.id == R.id.createAccountLink) changeActivity(NextPageClass= CreateAccount())
+        if (view.id == R.id.createAccountLink) changeActivity(NextPage=CreateAccount())
     }
 
-    fun changeActivity(NextPageClass: AppCompatActivity) {
-        val nextActivity = Intent(this, NextPageClass::class.java)
+    fun changeActivity(NextPage: AppCompatActivity) {
+        val nextActivity = Intent(this, NextPage::class.java)
         startActivity(nextActivity)
     }
 
     fun makeLogin(username: String, password: String) {
-        val userExists: Boolean = auth.verifyUserLogin(
-            username=username,
-            password=password,
-            context=applicationContext
-        )
-        if (userExists) changeActivity(NextPageClass= LoggedUser())
+        auth=Authentication(context=applicationContext)
+        val userExists: Boolean = auth.verifyUserLogin(username, password)
+        if (userExists) changeActivity(NextPage=LoggedUser())
     }
 
     fun registerListeners(arrayListeners: Array<Int>) {

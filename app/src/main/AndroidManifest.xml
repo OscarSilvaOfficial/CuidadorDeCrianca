@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChildCaretaker" >
-        <activity android:name=".main.LoggedUser" >
+        <activity
+            android:name=".main.LoggedUser" >
         </activity>
         <activity android:name=".account.CreateAccount" />
         <activity android:name=".main.MainActivity" >

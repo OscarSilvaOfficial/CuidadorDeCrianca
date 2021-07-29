@@ -4,21 +4,21 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 
-class Authentication {
+open class Authentication(val context: Context) {
 
-    fun getSharedPreferences(context: Context): SharedPreferences {
+    fun getSharedPreferences(): SharedPreferences {
         return context.getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
     }
 
-    fun getUser(context: Context): Map<String, Any?> {
+    fun getUser(preferences: SharedPreferences): Map<String, Any?> {
         return mapOf(
-            "name" to getSharedPreferences(context).all["username"].toString(),
-            "password" to getSharedPreferences(context).all["password"].toString()
+            "name" to preferences.all["username"].toString(),
+            "password" to preferences.all["password"].toString()
         )
     }
 
-    fun verifyUserLogin(username: String, password: String, context: Context): Boolean {
-        val usernameSaved = getUser(context)
+    fun verifyUserLogin(username: String, password: String): Boolean {
+        val usernameSaved = getUser(preferences=getSharedPreferences())
         return usernameSaved["name"] == username && password == usernameSaved["password"]
     }
 }

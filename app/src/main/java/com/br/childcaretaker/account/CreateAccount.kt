@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.br.childcaretaker.R
 import com.br.childcaretaker.main.MainActivity
 
-class CreateAccount : AppCompatActivity(), View.OnClickListener {
-    override fun onCreate(savedInstanceState: Bundle?) {
+open class CreateAccount : AppCompatActivity(), View.OnClickListener {
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
 
